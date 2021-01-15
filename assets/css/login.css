@@ -39,7 +39,7 @@ body {
 }
 
 .register {
-    /* display: none; */
+    display: none;
 }
 
 /* 字体图标 */
@@ -56,5 +56,3 @@ body {
 .layui-input {
     padding-left: 28px;
 }
-
-

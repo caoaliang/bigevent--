@@ -22,17 +22,17 @@
         <form class="layui-form" action="">
             <!-- 用户名 -->
             <div class="layui-form-item">
-                <i class="layui-icon layui-icon-username"></i>  
+                <i class="layui-icon layui-icon-username"></i>
                 <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
                     autocomplete="off" class="layui-input">
             </div>
             <!-- 密码 -->
             <div class="layui-form-item">
-                <i class="layui-icon layui-icon-password"></i>  
+                <i class="layui-icon layui-icon-password"></i>
                 <input type="password" name="password" required lay-verify="required" placeholder="请输密码"
                     autocomplete="off" class="layui-input">
             </div>
-            
+
             <!-- 登录按钮 -->
             <div class="layui-form-item">
                 <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">登录</button>
@@ -56,25 +56,25 @@
         <form class="layui-form" action="">
             <!-- 用户名 -->
             <div class="layui-form-item">
-                <i class="layui-icon layui-icon-username"></i>  
-                <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                <i class="layui-icon layui-icon-username"></i>
+                <input type="text" name="username" required lay-verify="required|user" placeholder="请输入用户名"
                     autocomplete="off" class="layui-input">
             </div>
             <!-- 密码 -->
             <div class="layui-form-item">
-                <i class="layui-icon layui-icon-password"></i>  
-                <input type="password" name="password" required lay-verify="required" placeholder="请输密码"
-                    autocomplete="off" class="layui-input">
+                <i class="layui-icon layui-icon-password"></i>
+                <input type="password" name="password" required lay-verify="required|len" placeholder="请输密码"
+                    autocomplete="off" class="layui-input pwd">
             </div>
             <!-- 确认密码 -->
             <div class="layui-form-item">
-                <i class="layui-icon layui-icon-password"></i>  
-                <input type="password" name="password" required lay-verify="required" placeholder="请确认密码"
-                    autocomplete="off" class="layui-input">
+                <i class="layui-icon layui-icon-password"></i>
+                <input type="password" required lay-verify="required|len|same" placeholder="请确认密码" autocomplete="off"
+                    class="layui-input">
             </div>
             <!-- 登录按钮 -->
             <div class="layui-form-item">
-                <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">登录</button>
+                <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">注册</button>
             </div>
             <!-- a 超链接 去登录 -->
             <div class="layui-form-item">

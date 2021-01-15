@@ -20,5 +20,9 @@ $.ajaxPrefilter(function (option) {
             localStorage.removeItem('token');
             location.href = './login.html';
         }
+        //其他错误
+        if (res && res.status === 1) {
+            layer.msg(res.message)
+        }
     }
 });
