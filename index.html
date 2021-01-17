@@ -1,10 +1,18 @@
+<script>
+    // 马上判断，本地存储是否有token
+    if (localStorage.getItem('token') === null) {
+        // 如果没有，跳转到登录页
+        location.href = './login.html';
+    }
+</script>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>阿亮的首页</title>
+    <title>老汤的首页</title>
     <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
@@ -16,10 +24,11 @@
                 <img src="./assets/images/logo.png" alt="">
             </div>
             <!-- 头部区域（可配合layui已有的水平导航） -->
-
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
+                    <!-- 复制这个a标签，到侧边栏 -->
                     <a href="javascript:;">
+                        <span class="text-avatar">L</span>
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
                         个人中心
                     </a>
@@ -30,7 +39,7 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="">
+                    <a href="javascript:;" id="logout">
                         <i class="layui-icon layui-icon-logout">
                         </i>退出</a>
                 </li>
@@ -39,32 +48,37 @@
 
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
-
-
-                <div class="userinfo">
-                    <span class="text-avatar">C</span>
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    个人中心<span class="username">阿亮</span>
-                </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+                <!-- 从头部复制过来之后，把a改为div -->
+                <div class="userinfo">
+                    <span class="text-avatar">L</span>
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    欢迎你 <span class="username">曹啊亮</span>
+                </div>
                 <ul class="layui-nav layui-nav-tree" lay-filter="test" lay-shrink="all">
-                    <li class="layui-nav-item layui-this"><a href=""><i
-                                class="layui-icon layui-icon-heart-fill"></i>首页</a></li>
-                    <li class="layui-nav-item ">
-                        <a class="" href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>文章管理</a>
+                    <li class="layui-nav-item layui-this"><a href=""><i class="layui-icon layui-icon-home"></i>首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;"><i class="layui-icon layui-icon-form"></i>文章管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>列表一</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>列表二</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>列表三</a></dd>
-                            <dd><a href=""><i class="layui-icon layui-icon-app"></i>超链接</a></dd>
+                            <dd><a href="./code/category.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>类别管理</a></dd>
+                            <dd><a href="./article/list.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+                            <dd><a href="./article/add.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>添加文章</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;"><i class="layui-icon layui-icon-username"></i>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>列表一</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>列表二</a></dd>
-                            <dd><a href=""><i class="layui-icon layui-icon-app"></i>超链接</a></dd>
+                            <dd><a href="./user/userinfo.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+                            <dd><a href="./user/repwd.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                            <dd><a href="./user/avatar.html" target="fm"><i
+                                        class="layui-icon layui-icon-app"></i>更换头像</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -73,7 +87,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">内容主体区域</div>
+            <iframe name="fm" src="./home/dashboard.html" frameborder="0"></iframe>
         </div>
 
         <div class="layui-footer">
@@ -81,7 +95,10 @@
             © layui.com - 底部固定区域
         </div>
     </div>
+    <!-- 一定要加载layui.all.js -->
     <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/common.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 
